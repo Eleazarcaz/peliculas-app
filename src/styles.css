@@ -7,7 +7,9 @@ body {
 .navbar {
   background-color: rgb(20, 17, 37);
 }
+
 .card {
+  margin-left: 40px !important;
   background-color: rgb(105, 90, 205);
   cursor: pointer;
 }
@@ -17,3 +19,37 @@ body {
   background-color: rgba(20, 17, 37, 0.658);
   color: rgb(231, 228, 252);
 }
+
+/* Puntuacion */
+.ec-stars-wrapper {
+  /* Espacio entre los inline-block (los hijos, los `a`) 
+	   http://ksesocss.blogspot.com/2012/03/display-inline-block-y-sus-empeno-en.html */
+  font-size: 0;
+  /* Podríamos quitarlo, 
+		pero de esta manera (siempre que no le demos padding), 
+		sólo aplicará la regla .ec-stars-wrapper:hover a cuando
+		también se esté haciendo hover a alguna estrella */
+  display: inline-block;
+}
+.ec-stars-wrapper span {
+  text-decoration: none;
+  display: inline-block;
+  /* Volver a dar tamaño al texto */
+  font-size: 10px;
+  font-size: 1.5rem;
+  color: #888;
+}
+
+.ec-stars-wrapper .voto {
+  color: rgb(215, 228, 39);
+}
+
+/* .ec-stars-wrapper:hover span {
+  color: rgb(39, 130, 228);
+}
+/*
+ * El selector de hijo, es necesario para aumentar la especifidad
+
+.ec-stars-wrapper > span:hover ~ span {
+  color: #888;
+}*/

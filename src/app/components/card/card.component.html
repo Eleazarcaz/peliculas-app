@@ -1,0 +1,19 @@
+<div class="card">
+    <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{ pelicula.poster_path }}" alt="Card image cap" />
+
+    <div class="card-body">
+        <h5 class="card-title">{{ pelicula.title }}</h5>
+        <div class="ec-stars-wrapper">
+
+            <span [ngClass]="{'voto': pelicula.vote_average > 2}">&#9733;</span>
+            <span [ngClass]=" {'voto': pelicula.vote_average> 4}">&#9733;</span>
+            <span [ngClass]="{'voto': pelicula.vote_average > 6}">&#9733;</span>
+            <span [ngClass]=" {'voto': pelicula.vote_average> 8}">&#9733;</span>
+            <span [ngClass]="{'voto': pelicula.vote_average >= 10}">&#9733;</span>
+
+        </div>
+        <p class="card-text">
+            <small class="text-muted">{{pelicula.genre_ids | json}}</small>
+        </p>
+    </div>
+</div>
