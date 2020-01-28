@@ -7,9 +7,11 @@ import { PeliculasService } from '../../services/peliculas.service';
   styles: []
 })
 export class HomeComponent implements OnInit {
+  public peliculas: Array<any>;
   constructor(private _peliculas: PeliculasService) {
-    this._peliculas.getTrendingMovies().subscribe(peliculas => {
-      console.log(peliculas);
+    this._peliculas.getTrendingMovies().subscribe(resp => {
+      this.peliculas = resp;
+      console.log(this.peliculas);
     });
   }
 

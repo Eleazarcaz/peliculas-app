@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: rgb(20, 17, 37);
+  color: rgb(231, 228, 252);
+}
+
+.navbar {
+  background-color: rgb(20, 17, 37);
+}
+.card {
+  background-color: rgb(105, 90, 205);
+  cursor: pointer;
+}
+
+.card-body {
+  position: relative;
+  background-color: rgba(20, 17, 37, 0.658);
+  color: rgb(231, 228, 252);
+}
