@@ -8,10 +8,17 @@ import { HttpClientJsonpModule } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardComponent } from './components/card/card.component';
+import { AppRouting } from './app.routing';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SearchComponent, NavbarComponent, CardComponent],
-  imports: [BrowserModule, HttpClientJsonpModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    SearchComponent,
+    NavbarComponent,
+    CardComponent
+  ],
+  imports: [BrowserModule, HttpClientJsonpModule, HttpClientModule, AppRouting],
   providers: [],
   bootstrap: [AppComponent]
 })
