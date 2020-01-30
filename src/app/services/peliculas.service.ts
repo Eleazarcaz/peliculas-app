@@ -40,6 +40,28 @@ export class PeliculasService {
       );
   }
 
+  searchMovies(name: string) {
+    return this.http
+      .get(
+        `${this.url}/search/movie?api_key=${this.api_key}&language=es-MX&query=${name}&page=1&include_adult=false`
+      )
+      .pipe(
+        map(resp => {
+          var peliculas_buscadas = [];
+          var resultados = resp['results'];
+          var numero_resultados = 10;
+          if (resp['total_results'] < 10) {
+            numero_resultados = resp['total_results'];
+          }
+
+          for (let index = 0; index <= numero_resultados; index++) {
+            peliculas_buscadas.push(resultados[index]);
+          }
+
+          return peliculas_buscadas;
+        })
+      );
+  }
   getGenres() {
     return this.http
       .get(

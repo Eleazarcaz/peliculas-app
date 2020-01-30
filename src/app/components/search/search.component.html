@@ -1,1 +1,14 @@
-<p>search works!</p>
+<div class="container">
+    <div class="form-group">
+        <label for=""></label>
+        <input #busqueda type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+            (keyup.enter)="buscarPeliculas(busqueda.value)">
+        <small id="helpId" class="form-text text-muted">Buscar Pelicula</small>
+    </div>
+
+    <div class="container mt-20">
+        <div class="card-columns">
+            <app-card [pelicula]="pelicula" *ngFor="let pelicula of peliculas"></app-card>
+        </div>
+    </div>
+</div>
