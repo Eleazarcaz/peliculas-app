@@ -13,7 +13,7 @@
 
         </div>
         <p class="card-text">
-            <small class="text-muted">{{pelicula.genre_ids | json}}</small>
+            <span class="text-muted" *ngFor="let genero of pelicula.generos">{{genero.name}}</span>
         </p>
     </div>
 </div>

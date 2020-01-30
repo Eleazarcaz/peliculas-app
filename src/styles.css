@@ -6,20 +6,40 @@ body {
 
 .navbar {
   background-color: rgb(20, 17, 37);
+  height: 10%;
+}
+
+.container {
+  width: 100%;
+}
+.card-columns {
+  width: 60%;
 }
 
 .card {
+  width: 100% !important;
+
+  position: relative;
+  border: none;
   margin-left: 40px !important;
-  background-color: rgb(105, 90, 205);
+  background-color: rgb(20, 17, 37);
   cursor: pointer;
+  height: 520px !important;
 }
 
 .card-body {
+  width: auto;
   position: relative;
-  background-color: rgba(20, 17, 37, 0.658);
+
   color: rgb(231, 228, 252);
+
+  margin-bottom: 10px;
 }
 
+.text-muted {
+  padding-right: 10px;
+  display: inline-block;
+}
 /* Puntuacion */
 .ec-stars-wrapper {
   /* Espacio entre los inline-block (los hijos, los `a`) 
