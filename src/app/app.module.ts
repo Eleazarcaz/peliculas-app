@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardComponent } from './components/card/card.component';
 import { AppRouting } from './app.routing';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppRouting } from './app.routing';
     HomeComponent,
     SearchComponent,
     NavbarComponent,
-    CardComponent
+    CardComponent,
+    PeliculaComponent
   ],
   imports: [BrowserModule, HttpClientJsonpModule, HttpClientModule, AppRouting],
   providers: [],

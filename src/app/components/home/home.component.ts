@@ -8,7 +8,6 @@ import { PeliculasService } from '../../services/peliculas.service';
 })
 export class HomeComponent implements OnInit {
   public peliculas: Array<any>;
-  public generos: Array<any>;
 
   constructor(private _peliculas: PeliculasService) {}
 

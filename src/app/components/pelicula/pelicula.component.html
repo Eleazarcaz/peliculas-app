@@ -1,0 +1,33 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-6">
+            <div class="col text-center">
+
+                <img src="https://image.tmdb.org/t/p/w500/{{pelicula.poster_path}}" alt="" class="img-fluid" />
+            </div>
+            <br />
+            <a [routerLink]="['/home']" class="btn btn-outline-danger btn-block">Regresar</a>
+        </div>
+
+        <div class="col-md-4">
+            <h3>{{pelicula.title}}</h3>
+            <small>{{pelicula.release_date | date: 'y'}}</small>
+            <br>
+            <div class="ec-stars-wrapper">
+
+                <span [ngClass]="{'voto': pelicula.vote_average > 2}">&#9733;</span>
+                <span [ngClass]=" {'voto': pelicula.vote_average> 4}">&#9733;</span>
+                <span [ngClass]="{'voto': pelicula.vote_average > 6}">&#9733;</span>
+                <span [ngClass]=" {'voto': pelicula.vote_average> 8}">&#9733;</span>
+                <span [ngClass]="{'voto': pelicula.vote_average >= 10}">&#9733;</span>
+
+            </div>
+            <p>
+                {{pelicula.overview}}
+            </p>
+            <span class="text-muted" *ngFor="let genero of pelicula.genres">
+                {{genero.name}}
+            </span>
+        </div>
+    </div>
+</div>

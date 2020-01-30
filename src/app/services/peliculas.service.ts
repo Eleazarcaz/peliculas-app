@@ -20,24 +20,33 @@ export class PeliculasService {
       .pipe(
         map(resp => {
           let peliculas = resp['results'];
-
-          peliculas.forEach(pelicula => {
-            pelicula['generos'] = [];
-            // Ciclo para checar cada id en los generos de la pelicula
-            pelicula['genre_ids'].forEach((genero_id: any) => {
-              let findGenero = this.genres.find(findId);
-
-              if (findGenero !== undefined) {
-                (<Array<any>>pelicula['generos']).push(findGenero);
-              }
-              function findId(obj) {
-                return obj.id === genero_id;
-              }
-            });
-          });
-          return peliculas;
+          return this.genre_movies(peliculas);
         })
       );
+  }
+
+  getMovie(id: string) {
+    return this.http.get(
+      `${this.url}/movie/${id}?api_key=${this.api_key}&language=es-MX`
+    );
+  }
+
+  private genre_movies(movies: Array<any>): Array<any> {
+    movies.forEach(pelicula => {
+      pelicula['generos'] = [];
+      // Ciclo para checar cada id en los generos de la pelicula
+      pelicula['genre_ids'].forEach((genero_id: any) => {
+        let findGenero = this.genres.find(findId);
+
+        if (findGenero !== undefined) {
+          (<Array<any>>pelicula['generos']).push(findGenero);
+        }
+        function findId(obj) {
+          return obj.id === genero_id;
+        }
+      });
+    });
+    return movies;
   }
 
   searchMovies(name: string) {
@@ -58,7 +67,7 @@ export class PeliculasService {
             peliculas_buscadas.push(resultados[index]);
           }
 
-          return peliculas_buscadas;
+          return this.genre_movies(peliculas_buscadas);
         })
       );
   }
