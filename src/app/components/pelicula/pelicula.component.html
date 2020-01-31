@@ -6,7 +6,9 @@
                 <img src="https://image.tmdb.org/t/p/w500/{{pelicula.poster_path}}" alt="" class="img-fluid" />
             </div>
             <br />
-            <a [routerLink]="['/home']" class="btn btn-outline-danger btn-block">Regresar</a>
+            <button class="btn btn-outline-danger" (click)="regresar()">
+                Regresar
+            </button>
         </div>
 
         <div class="col-md-4">

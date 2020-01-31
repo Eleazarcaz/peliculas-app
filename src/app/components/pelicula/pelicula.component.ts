@@ -22,4 +22,8 @@ export class PeliculaComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  regresar() {
+    window.history.back();
+  }
 }
