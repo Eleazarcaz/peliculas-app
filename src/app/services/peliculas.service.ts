@@ -19,6 +19,7 @@ export class PeliculasService {
       .get(`${this.url}/trending/all/week?api_key=${this.api_key}&language=es`)
       .pipe(
         map(resp => {
+          setInterval(() => {}, 1000);
           let peliculas = resp['results'];
           return this.genre_movies(peliculas);
         })
