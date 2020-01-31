@@ -11,8 +11,9 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search" />
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+      <input #b [ngModel]="busqueda" name="b" class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search" />
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="button" [routerLink]="['/buscar']"
+        [queryParams]="{pelicula: b.value}">
         Buscar
       </button>
     </form>
